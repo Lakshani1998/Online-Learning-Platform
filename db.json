@@ -1,25 +1,9 @@
 {
   "Courses": [
     {
-      "id": "200",
-      "name": "Engineering up",
-      "description": "This is a Engineering course for 2nd year students"
-    },
-    {
       "id": "201",
       "name": "Maththematics",
       "description": "This is a Mathematics course for 2nd year students"
-    },
-    {
-      "id": "202",
-      "name": "A updated",
-      "description": "z updated",
-      "createdAt": "2024-04-23"
-    },
-    {
-      "id": "1fea",
-      "name": "g",
-      "description": "bbb"
     },
     {
       "id": "202",

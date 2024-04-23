@@ -151,57 +151,61 @@ Please provide all required feilds!
         });}
     }
 
-    return(
+    return (
         <>
-        <h2 className='text-center mb-3'>{props.Course.id ? "Edit Product" : "Create New Product"}</h2>
-
-        <div className="row">
+          <h2 className='text-center mb-3'>{props.Course.id ? "Edit Course" : "Create New Course"}</h2>
+      
+          <div className="row">
             <div className='col-lg-6 mx-auto'>
-
-                {errorMessage}
-
-                <form onSubmit={(event) => handleSubmit(event)}>
-
-                    {props.Course.id && <div className='row  mb-3'>
-                        <label className='col-sm-4 col-form-label' htmlFor="form-control">Course ID</label>
-                        <div className='col-sm-8'>
-                            <input readOnly className='form-control'
-                            name='id'
-                            defaultValue={props.Course.id} />
-                        </div>
-                    </div>}
-
-                    <div className='row  mb-3'>
-                        <label className='col-sm-4 col-form-label' htmlFor="form-control">Course Name</label>
-                        <div className='col-sm-8'>
-                            <input className='form-control'
-                            name='name'
-                            defaultValue={props.Course.name} />
-                        </div>
-                    </div>
-
-                    <div className='row  mb-3'>
-                        <label className='col-sm-4 col-form-label' htmlFor="form-control">Description</label>
-                        <div className='col-sm-8'>
-                            <textarea className='form-control'
-                            name='description'
-                            defaultValue={props.Course.description} />
-                        </div>
-                    </div>
-
-                    <div className='row'>
-                        <div className='offset-sm-4 col-sm-4 d-grid'>
-                            <button type='submit' className='btn btn-primary btn-sm me-3'>Save</button>
-                        </div>
-                        <div className='col-sm-4 d-grid'>
-                        <button onClick={()=>props.showList()} type='button' className='btn btn-secondary me-2'>Cancel</button>
-                        </div>
-                    </div>
-                </form>
-
+      
+              {errorMessage}
+      
+              <form onSubmit={(event) => handleSubmit(event)}>
+      
+                <div className='row  mb-3'>
+                  <label className='col-sm-4 col-form-label' htmlFor="form-control">Course ID</label>
+                  <div className='col-sm-8'>
+                    <input
+                      className='form-control'
+                      name='id'
+                      defaultValue={props.Course.id || ''}
+                      readOnly={props.Course.id ? true : false} // Set readOnly to false only if props.Course.id does not exist
+                    />
+                  </div>
+                </div>
+      
+                <div className='row  mb-3'>
+                  <label className='col-sm-4 col-form-label' htmlFor="form-control">Course Name</label>
+                  <div className='col-sm-8'>
+                    <input className='form-control'
+                           name='name'
+                           defaultValue={props.Course.name} />
+                  </div>
+                </div>
+      
+                <div className='row  mb-3'>
+                  <label className='col-sm-4 col-form-label' htmlFor="form-control">Description</label>
+                  <div className='col-sm-8'>
+                    <textarea className='form-control'
+                              name='description'
+                              defaultValue={props.Course.description} />
+                  </div>
+                </div>
+      
+                <div className='row'>
+                  <div className='offset-sm-4 col-sm-4 d-grid'>
+                    <button type='submit' className='btn btn-primary btn-sm me-3'>Save</button>
+                  </div>
+                  <div className='col-sm-4 d-grid'>
+                    <button onClick={() => props.showList()} type='button' className='btn btn-secondary me-2'>Cancel</button>
+                  </div>
+                </div>
+              </form>
+      
             </div>
-        </div>
+          </div>
         </>
-    );
+      );
+      
 
 }
