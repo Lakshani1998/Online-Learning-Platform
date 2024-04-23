@@ -9,11 +9,13 @@ import Courses from './Components/Courses';
 import Student from './Components/Students'
 import Enrollment from './Components/Enrollments'
 import Home from './Components/Home';
+import LandingPage from './Components/LandingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <BrowserRouter>
+  <LandingPage/>
+  {/* <BrowserRouter>
   <Navbar/>
   <Routes>
     <Route path='/Home' element={<Home/>}></Route>
@@ -22,7 +24,7 @@ root.render(
     <Route path='/Enrollment' element={<Enrollment/>}></Route>
   </Routes>
   <Footer/>
-  </BrowserRouter>
+  </BrowserRouter> */}
  
   </>
 );
