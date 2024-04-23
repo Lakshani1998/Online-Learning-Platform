@@ -7,7 +7,7 @@ import { Navbar, Footer } from './Components/Layout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Courses from './Components/Courses';
 import Student from './Components/Students'
-import Enrollment from './Components/Enrollment'
+import Enrollment from './Components/Enrollments'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +26,4 @@ root.render(
 );
 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

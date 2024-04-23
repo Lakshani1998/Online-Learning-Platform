@@ -1,21 +1,19 @@
 {
   "Courses": [
     {
-      "id": "201",
+      "id": "001",
       "name": "Maththematics",
-      "description": "This is a Mathematics course for 2nd year students"
+      "description": "This is a Mathematics course for [2023-2 ] students"
     },
     {
-      "id": "202",
-      "name": "A",
-      "description": "z",
-      "createdAt": "2024-04-23"
+      "id": "002",
+      "name": "DataBase Management Systems",
+      "description": "This is a Mathematics course for [2022-4 ] students"
     },
     {
-      "id": "203",
+      "id": "003",
       "name": "Electronics",
-      "description": "This is Electronic Module",
-      "createdAt": "2024-04-23"
+      "description": "This is a Mathematics course for [2024-2 ] students"
     }
   ],
   "Students": [
@@ -34,5 +32,26 @@
       "name": "Wickramasinghe Kamesh",
       "email": "kamesh@gmail.com"
     }
+  ],
+
+  "Enrollments": [
+    {
+      "id": "1",
+      "studentId": "1",
+      "CourseId": "001",
+      "semester" : "2024-2"
+    },
+    {
+        "id": "2",
+        "studentId": "2",
+        "CourseId": "002",
+        "semester" : "2022-4"
+      },
+      {
+        "id": "3",
+        "studentId": "2",
+        "CourseId": "003",
+        "semester" : "2023-2"
+      }
   ]
 }
