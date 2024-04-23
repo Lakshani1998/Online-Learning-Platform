@@ -14,8 +14,8 @@ import LandingPage from './Components/LandingPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <LandingPage/>
-  {/* <BrowserRouter>
+  {/* <LandingPage/> */}
+  <BrowserRouter>
   <Navbar/>
   <Routes>
     <Route path='/Home' element={<Home/>}></Route>
@@ -24,7 +24,7 @@ root.render(
     <Route path='/Enrollment' element={<Enrollment/>}></Route>
   </Routes>
   <Footer/>
-  </BrowserRouter> */}
+  </BrowserRouter>
  
   </>
 );
