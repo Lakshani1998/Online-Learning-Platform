@@ -17,5 +17,22 @@
       "description": "This is Electronic Module",
       "createdAt": "2024-04-23"
     }
+  ],
+  "Students": [
+    {
+      "id": "1",
+      "name": "Mihiran Wijesiri 1",
+      "email": "mihiran@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Iresha Seuwandi",
+      "email": "iresha@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Wickramasinghe Kamesh",
+      "email": "kamesh@gmail.com"
+    }
   ]
 }

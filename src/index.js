@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Navbar, Footer } from './Components/Layout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Courses from './Components/Courses';
-import Student from './Components/Student'
+import Student from './Components/Students'
 import Enrollment from './Components/Enrollment'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
