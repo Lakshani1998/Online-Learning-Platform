@@ -7,8 +7,8 @@ export default function Courses() {
         setContent(<CoursesList showForm={showForm}/>);
     }
 
-    function showForm(){
-        setContent(<CoursesForm showList={showList}/>)
+    function showForm(Course){
+        setContent(<CoursesForm Course={Course} showList={showList}/>)
     }
 
   return (
@@ -41,10 +41,18 @@ function CoursesList(props){
 
     useEffect(()=> fetchCourses(),[]);
 
+    function deleteCourse(id){
+        fetch('http://localhost:3002/Courses/' + id, {
+            method: 'DELETE'
+        })
+        .then((response)=>response.json())
+        .then((data) => fetchCourses());
+    }
+
     return(
         <>
         <h2 className='text-center mb-3'>List of Courses</h2>
-        <button onClick={()=> props.showForm()} type='button' className='btn btn-primary me-2'>Create</button>
+        <button onClick={()=> props.showForm({})} type='button' className='btn btn-primary me-2'>Create</button>
         <button onClick={()=> fetchCourses()} type='button' className='btn btn-outline-primary me-2'>Refresh</button>
         <table className='table'>
             <thead>
@@ -63,8 +71,8 @@ function CoursesList(props){
                             <td>{Course.name}</td>
                             <td>{Course.description}</td>
                             <td style={{width:"10px", whiteSpace:"nowrap"}}>
-                                <button type="button" className='btn btn-primary btn-sm me-2'>Edit</button>
-                                <button type="button" className='btn btn-danger btn-sm'>Delete</button>
+                                <button onClick={()=> props.showForm(Course)} type="button" className='btn btn-primary btn-sm me-2'>Edit</button>
+                                <button onClick={()=> deleteCourse(Course.id)} type="button" className='btn btn-danger btn-sm'>Delete</button>
                             </td>
                         </tr>
                     );
@@ -99,6 +107,29 @@ Please provide all required feilds!
             return;
        }
 
+       if(props.Course.id){
+
+        //Update the Product
+       fetch("http://localhost:3002/Courses/" + props.Course.id, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+          },
+          body:JSON.stringify(Course)
+       })
+        .then((response)=>{
+            if(!response.ok){
+                throw new Error("Network response was not OK");
+            }
+            return response.json()
+        })
+        .then((data) => props.showList())
+        .catch((error) => {
+            console.error("Error: ", error);
+        });
+
+       } else {
+        
        //create a new course
        Course.createdAt = new Date().toISOString().slice(0,10);
        fetch("http://localhost:3002/Courses", {
@@ -117,12 +148,12 @@ Please provide all required feilds!
         .then((data) => props.showList())
         .catch((error) => {
             console.error("Error: ", error);
-        });
+        });}
     }
 
     return(
         <>
-        <h2 className='text-center mb-3'>Create a new Courses</h2>
+        <h2 className='text-center mb-3'>{props.Course.id ? "Edit Product" : "Create New Product"}</h2>
 
         <div className="row">
             <div className='col-lg-6 mx-auto'>
@@ -131,21 +162,21 @@ Please provide all required feilds!
 
                 <form onSubmit={(event) => handleSubmit(event)}>
 
-                <div className='row  mb-3'>
+                    {props.Course.id && <div className='row  mb-3'>
                         <label className='col-sm-4 col-form-label' htmlFor="form-control">Course ID</label>
                         <div className='col-sm-8'>
-                            <input className='form-control'
+                            <input readOnly className='form-control'
                             name='id'
-                            defaultValue="" />
+                            defaultValue={props.Course.id} />
                         </div>
-                    </div>
+                    </div>}
 
                     <div className='row  mb-3'>
                         <label className='col-sm-4 col-form-label' htmlFor="form-control">Course Name</label>
                         <div className='col-sm-8'>
                             <input className='form-control'
                             name='name'
-                            defaultValue="" />
+                            defaultValue={props.Course.name} />
                         </div>
                     </div>
 
@@ -154,7 +185,7 @@ Please provide all required feilds!
                         <div className='col-sm-8'>
                             <textarea className='form-control'
                             name='description'
-                            defaultValue="" />
+                            defaultValue={props.Course.description} />
                         </div>
                     </div>
 
