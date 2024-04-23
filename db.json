@@ -1,0 +1,37 @@
+{
+  "Courses": [
+    {
+      "id": "200",
+      "name": "Engineering up",
+      "description": "This is a Engineering course for 2nd year students"
+    },
+    {
+      "id": "201",
+      "name": "Maththematics",
+      "description": "This is a Mathematics course for 2nd year students"
+    },
+    {
+      "id": "202",
+      "name": "Science",
+      "description": "This is a Science course for 2nd year students"
+    },
+    {
+      "id": "c09a"
+    },
+    {
+      "id": "1fea"
+    },
+    {
+      "id": "202",
+      "name": "A",
+      "description": "z",
+      "createdAt": "2024-04-23"
+    },
+    {
+      "id": "203",
+      "name": "Electronics",
+      "description": "This is Electronic Module",
+      "createdAt": "2024-04-23"
+    }
+  ]
+}
