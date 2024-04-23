@@ -98,7 +98,7 @@ function EnrollmentsForm(props){
        const Enrollment = Object.fromEntries(formData.entries());
 
        //form validation
-       if(!Enrollment.name || !Enrollment.description){
+       if(!Enrollment.id || !Enrollment.studentId || !Enrollment.CourseId ||!Enrollment.semester){
             console.log ("Please provide all required feilds!")
             setErrorMessage(
                 <div className="alert alert-warning" role="alert">Please provide all required feilds!</div>

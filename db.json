@@ -31,27 +31,38 @@
       "id": "3",
       "name": "Wickramasinghe Kamesh",
       "email": "kamesh@gmail.com"
+    },
+    {
+      "id": "1",
+      "name": "A",
+      "email": "C"
     }
   ],
-
   "Enrollments": [
     {
       "id": "1",
       "studentId": "1",
       "CourseId": "001",
-      "semester" : "2024-2"
+      "semester": "2024-2"
     },
     {
-        "id": "2",
-        "studentId": "2",
-        "CourseId": "002",
-        "semester" : "2022-4"
-      },
-      {
-        "id": "3",
-        "studentId": "2",
-        "CourseId": "003",
-        "semester" : "2023-2"
-      }
+      "id": "2",
+      "studentId": "2",
+      "CourseId": "002",
+      "semester": "2022-4"
+    },
+    {
+      "id": "3",
+      "studentId": "2",
+      "CourseId": "003",
+      "semester": "2023-2"
+    },
+    {
+      "id": "4",
+      "studentId": "1",
+      "CourseId": "002",
+      "semester": "2023-2",
+      "createdAt": "2024-04-23"
+    }
   ]
 }
