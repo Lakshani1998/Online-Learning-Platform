@@ -77,6 +77,7 @@ function CoursesList(props){
 }
 
 function CoursesForm(props){
+    const [errorMessage, setErrorMessage] = useState("");
 
     function  handleSubmit(event){
        event.preventDefault(); 
@@ -88,7 +89,13 @@ function CoursesForm(props){
 
        //form validation
        if(!Course.name || !Course.description){
-            console.log ("Please provide all requires feilds!")
+            console.log ("Please provide all required feilds!")
+            setErrorMessage(
+                <div className="alert alert-warning" role="alert">
+Please provide all required feilds!
+</div>
+
+            )
             return;
        }
 
@@ -116,10 +123,11 @@ function CoursesForm(props){
     return(
         <>
         <h2 className='text-center mb-3'>Create a new Courses</h2>
-        <button onClick={()=>props.showList()} type='button' className='btn btn-secondary me-2'>Cancel</button>
 
         <div className="row">
             <div className='col-lg-6 mx-auto'>
+
+                {errorMessage}
 
                 <form onSubmit={(event) => handleSubmit(event)}>
 
